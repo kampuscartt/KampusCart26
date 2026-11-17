@@ -1,0 +1,427 @@
+<html>
+<head>
+<meta charset="UTF-8">
+</head>
+<body>
+
+
+<p class="p2">&lt;!DOCTYPE html&gt;</p>
+<p class="p2">&lt;html lang="en"&gt;</p>
+<p class="p2">&lt;head&gt;</p>
+<p class="p2">&lt;meta charset="UTF-8"&gt;</p>
+<p class="p2">&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
+<p class="p2">&lt;meta name="theme-color" content="#082b70"&gt;</p>
+<p class="p2">&lt;title&gt;KampusCart | UCC Marketplace&lt;/title&gt;</p>
+<p class="p2">&lt;style&gt;</p>
+<p class="p2">:root {</p>
+<p class="p2"><span class="Apple-converted-space"> </span>--blue:#082b70;</p>
+<p class="p2"><span class="Apple-converted-space"> </span>--blue2:#1046a0;</p>
+<p class="p2"><span class="Apple-converted-space"> </span>--gold:#e8b638;</p>
+<p class="p2"><span class="Apple-converted-space"> </span>--white:#fff;</p>
+<p class="p2"><span class="Apple-converted-space"> </span>--light:#f3f6fc;</p>
+<p class="p2"><span class="Apple-converted-space"> </span>--dark:#17233c;</p>
+<p class="p2"><span class="Apple-converted-space"> </span>--muted:#68758b;</p>
+<p class="p2"><span class="Apple-converted-space"> </span>--green:#13834c;</p>
+<p class="p2">}</p>
+<p class="p2">*{box-sizing:border-box;margin:0;padding:0}</p>
+<p class="p2">body{font-family:Arial,sans-serif;background:var(--light);color:var(--dark)}</p>
+<p class="p2">button,input,select,textarea{font:inherit}</p>
+<p class="p2">button{cursor:pointer;border:0}</p>
+<p class="p2">header{background:var(--blue);color:white;position:sticky;top:0;z-index:20}</p>
+<p class="p2">.top{max-width:1200px;margin:auto;padding:15px 20px;display:flex;align-items:center;justify-content:space-between;gap:15px;flex-wrap:wrap}</p>
+<p class="p2">.logo{font-size:25px;font-weight:900;letter-spacing:-1px}</p>
+<p class="p2">.logo span{color:var(--gold)}</p>
+<p class="p2">nav{display:flex;gap:15px;flex-wrap:wrap}</p>
+<p class="p2">nav button{background:none;color:white;font-weight:bold;font-size:13px}</p>
+<p class="p2">.hero{background:linear-gradient(120deg,#082b70,#1452aa);color:white;padding:55px 20px}</p>
+<p class="p2">.hero-inner{max-width:1200px;margin:auto;display:grid;grid-template-columns:1.3fr 1fr;gap:30px;align-items:center}</p>
+<p class="p2">.hero h1{font-size:clamp(34px,5vw,55px);line-height:1.08;margin-bottom:15px}</p>
+<p class="p2">.hero h1 span{color:var(--gold)}</p>
+<p class="p2">.hero p{line-height:1.7;color:#e3eaff;max-width:600px}</p>
+<p class="p2">.hero-image{background:linear-gradient(135deg,#f6d77e,#fff);color:var(--blue);border-radius:22px;padding:30px;text-align:center;font-size:75px;min-height:210px;display:grid;place-items:center}</p>
+<p class="p2">.btn{background:var(--gold);color:#17233c;padding:12px 18px;border-radius:9px;font-weight:bold;margin-top:18px}</p>
+<p class="p2">.btn.blue{background:var(--blue);color:white}</p>
+<p class="p2">.btn.outline{background:white;border:1px solid #ccd4e2;color:var(--blue)}</p>
+<p class="p2">.container{max-width:1200px;margin:auto;padding:30px 20px}</p>
+<p class="p2">.section-title{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:18px}</p>
+<p class="p2">.section-title h2{color:var(--blue);font-size:23px}</p>
+<p class="p2">.searchbar{display:flex;gap:10px;margin-bottom:22px}</p>
+<p class="p2">.searchbar input{flex:1}</p>
+<p class="p2">input,select,textarea{width:100%;padding:12px;border:1px solid #d6dce8;border-radius:8px;background:white;outline:none}</p>
+<p class="p2">input:focus,select:focus,textarea:focus{border-color:var(--blue2)}</p>
+<p class="p2">.categories{display:flex;gap:10px;overflow-x:auto;padding:5px 0 20px}</p>
+<p class="p2">.category{min-width:110px;background:white;border:1px solid #e0e5ef;border-radius:12px;padding:15px 10px;text-align:center;color:var(--blue);font-weight:bold}</p>
+<p class="p2">.category span{display:block;font-size:26px;margin-bottom:8px}</p>
+<p class="p2">.category.active{background:var(--blue);color:white}</p>
+<p class="p2">.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:17px}</p>
+<p class="p2">.product{background:white;border-radius:13px;overflow:hidden;border:1px solid #e6eaf1}</p>
+<p class="p2">.product img{width:100%;height:155px;object-fit:cover;background:#e9eef7}</p>
+<p class="p2">.product-info{padding:13px}</p>
+<p class="p2">.product h3{font-size:15px;margin-bottom:7px}</p>
+<p class="p2">.price{color:var(--blue);font-weight:900;font-size:18px}</p>
+<p class="p2">.small{font-size:12px;color:var(--muted);margin-top:5px}</p>
+<p class="p2">.product .btn{width:100%;margin-top:12px;padding:10px}</p>
+<p class="p2">.tag{display:inline-block;background:#fff4d4;color:#765300;border-radius:5px;padding:4px 7px;font-size:11px;margin-bottom:7px}</p>
+<p class="p2">.panel{background:white;border:1px solid #e4e8f0;border-radius:13px;padding:20px;margin-bottom:20px}</p>
+<p class="p2">.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px}</p>
+<p class="p2">.field{margin-bottom:13px}</p>
+<p class="p2">.field label{display:block;font-weight:bold;font-size:13px;margin-bottom:6px}</p>
+<p class="p2">.full{grid-column:1/-1}</p>
+<p class="p2">.hidden{display:none!important}</p>
+<p class="p2">.notice{background:#fff5d9;padding:13px;border-radius:8px;font-size:13px;line-height:1.5;margin:12px 0}</p>
+<p class="p2">.success{background:#e7f7ee;color:#12643a;padding:12px;border-radius:8px;margin:10px 0}</p>
+<p class="p2">.danger{background:#fff0ef;color:#9b2929;padding:12px;border-radius:8px;margin:10px 0}</p>
+<p class="p2">.row{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}</p>
+<p class="p2">.cart-item{display:flex;justify-content:space-between;gap:10px;padding:12px 0;border-bottom:1px solid #eee}</p>
+<p class="p2">.cart-item button{background:#ffe9e7;color:#a22;padding:6px 9px;border-radius:5px}</p>
+<p class="p2">footer{background:#071d49;color:white;padding:35px 20px;margin-top:35px}</p>
+<p class="p2">footer .inner{max-width:1200px;margin:auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:20px}</p>
+<p class="p2">footer p{color:#d3def4;font-size:13px;line-height:1.8;margin-top:10px}</p>
+<p class="p2">footer h3{color:var(--gold)}</p>
+<p class="p2">.badge{background:#e8f0ff;color:var(--blue);padding:5px 8px;border-radius:6px;font-size:11px}</p>
+<p class="p2">@media(max-width:850px){.grid{grid-template-columns:repeat(2,1fr)}.hero-inner{grid-template-columns:1fr}.hero-image{min-height:140px}.top{justify-content:center}nav{justify-content:center}}</p>
+<p class="p2">@media(max-width:480px){.grid{grid-template-columns:1fr 1fr;gap:9px}.product img{height:115px}.product-info{padding:9px}.product h3{font-size:13px}.price{font-size:15px}.container{padding:22px 12px}.form-grid{grid-template-columns:1fr}.full{grid-column:auto}footer .inner{grid-template-columns:1fr}.hero{padding:40px 17px}}</p>
+<p class="p2">&lt;/style&gt;</p>
+<p class="p2">&lt;/head&gt;</p>
+<p class="p2">&lt;body&gt;</p>
+
+<p class="p2">&lt;header&gt;</p>
+<p class="p2"><span class="Apple-converted-space"> </span>&lt;div class="top"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>&lt;div class="logo"&gt;Kampus&lt;span&gt;Cart&lt;/span&gt; 🛒&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>&lt;nav&gt;</p>
+<p class="p2"><span class="Apple-converted-space">   </span>&lt;button onclick="showPage('home')"&gt;Home&lt;/button&gt;</p>
+<p class="p2"><span class="Apple-converted-space">   </span>&lt;button onclick="showPage('market')"&gt;Marketplace&lt;/button&gt;</p>
+<p class="p2"><span class="Apple-converted-space">   </span>&lt;button onclick="showPage('printing')"&gt;Custom Printing&lt;/button&gt;</p>
+<p class="p2"><span class="Apple-converted-space">   </span>&lt;button onclick="showPage('orders')"&gt;My Orders&lt;/button&gt;</p>
+<p class="p2"><span class="Apple-converted-space">   </span>&lt;button onclick="showPage('account')"&gt;Account&lt;/button&gt;</p>
+<p class="p2"><span class="Apple-converted-space">   </span>&lt;button onclick="showPage('cart')"&gt;Cart (&lt;span id="cartCount"&gt;0&lt;/span&gt;)&lt;/button&gt;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>&lt;/nav&gt;</p>
+<p class="p2"><span class="Apple-converted-space"> </span>&lt;/div&gt;</p>
+<p class="p2">&lt;/header&gt;</p>
+
+<p class="p2">&lt;main&gt;</p>
+<p class="p2">&lt;section id="home"&gt;</p>
+<p class="p2"><span class="Apple-converted-space"> </span>&lt;div class="hero"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>&lt;div class="hero-inner"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">   </span>&lt;div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span>&lt;div class="tag"&gt;THE UCC CAMPUS MARKETPLACE&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span>&lt;h1&gt;Everything you need.&lt;br&gt;&lt;span&gt;One campus.&lt;/span&gt;&lt;/h1&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span>&lt;p&gt;Buy, sell, order food, print custom T-shirts and discover businesses around the University of Cape Coast. KampusCart brings the campus community together.&lt;/p&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span>&lt;button class="btn" onclick="showPage('market')"&gt;Explore Marketplace →&lt;/button&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span>&lt;button class="btn outline" onclick="showPage('vendor')"&gt;Become a Vendor&lt;/button&gt;</p>
+<p class="p2"><span class="Apple-converted-space">   </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">   </span>&lt;div class="hero-image"&gt;🛍️ 📱 👕 🍔&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space"> </span>&lt;/div&gt;</p>
+
+<p class="p2"><span class="Apple-converted-space"> </span>&lt;div class="container"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>&lt;div class="section-title"&gt;&lt;h2&gt;Shop by category&lt;/h2&gt;&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>&lt;div class="categories"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">   </span>&lt;button class="category" onclick="filterCategory('All')"&gt;&lt;span&gt;🛍️&lt;/span&gt;All&lt;/button&gt;</p>
+<p class="p2"><span class="Apple-converted-space">   </span>&lt;button class="category" onclick="filterCategory('Printing')"&gt;&lt;span&gt;👕&lt;/span&gt;Printing&lt;/button&gt;</p>
+<p class="p2"><span class="Apple-converted-space">   </span>&lt;button class="category" onclick="filterCategory('Electronics')"&gt;&lt;span&gt;📱&lt;/span&gt;Electronics&lt;/button&gt;</p>
+<p class="p2"><span class="Apple-converted-space">   </span>&lt;button class="category" onclick="filterCategory('Food')"&gt;&lt;span&gt;🍔&lt;/span&gt;Food&lt;/button&gt;</p>
+<p class="p2"><span class="Apple-converted-space">   </span>&lt;button class="category" onclick="filterCategory('Books')"&gt;&lt;span&gt;📚&lt;/span&gt;Books&lt;/button&gt;</p>
+<p class="p2"><span class="Apple-converted-space">   </span>&lt;button class="category" onclick="filterCategory('Fashion')"&gt;&lt;span&gt;🧢&lt;/span&gt;Fashion&lt;/button&gt;</p>
+<p class="p2"><span class="Apple-converted-space">   </span>&lt;button class="category" onclick="filterCategory('Accessories')"&gt;&lt;span&gt;🎧&lt;/span&gt;Accessories&lt;/button&gt;</p>
+<p class="p2"><span class="Apple-converted-space">   </span>&lt;button class="category" onclick="filterCategory('Services')"&gt;&lt;span&gt;🛠️&lt;/span&gt;Services&lt;/button&gt;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>&lt;div class="section-title"&gt;&lt;h2&gt;Popular products&lt;/h2&gt;&lt;button class="btn blue" onclick="showPage('market')"&gt;View all&lt;/button&gt;&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>&lt;div id="homeProducts" class="grid"&gt;&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space"> </span>&lt;/div&gt;</p>
+<p class="p2">&lt;/section&gt;</p>
+
+<p class="p2">&lt;section id="market" class="container hidden"&gt;</p>
+<p class="p2"><span class="Apple-converted-space"> </span>&lt;div class="section-title"&gt;&lt;h2&gt;Marketplace&lt;/h2&gt;&lt;span class="badge"&gt;UCC Community&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space"> </span>&lt;div class="searchbar"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>&lt;input id="search" placeholder="Search products, shops and services..." oninput="renderProducts()"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>&lt;button class="btn blue" onclick="renderProducts()"&gt;Search&lt;/button&gt;</p>
+<p class="p2"><span class="Apple-converted-space"> </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space"> </span>&lt;div class="categories"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>&lt;button class="category active" onclick="filterCategory('All')"&gt;All&lt;/button&gt;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>&lt;button class="category" onclick="filterCategory('Printing')"&gt;Printing&lt;/button&gt;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>&lt;button class="category" onclick="filterCategory('Electronics')"&gt;Electronics&lt;/button&gt;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>&lt;button class="category" onclick="filterCategory('Food')"&gt;Food&lt;/button&gt;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>&lt;button class="category" onclick="filterCategory('Books')"&gt;Books&lt;/button&gt;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>&lt;button class="category" onclick="filterCategory('Fashion')"&gt;Fashion&lt;/button&gt;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>&lt;button class="category" onclick="filterCategory('Accessories')"&gt;Accessories&lt;/button&gt;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>&lt;button class="category" onclick="filterCategory('Services')"&gt;Services&lt;/button&gt;</p>
+<p class="p2"><span class="Apple-converted-space"> </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space"> </span>&lt;div id="products" class="grid"&gt;&lt;/div&gt;</p>
+<p class="p2">&lt;/section&gt;</p>
+
+<p class="p2">&lt;section id="printing" class="container hidden"&gt;</p>
+<p class="p2"><span class="Apple-converted-space"> </span>&lt;div class="section-title"&gt;&lt;h2&gt;Custom Printing Studio&lt;/h2&gt;&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space"> </span>&lt;div class="panel"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>&lt;div class="row"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">   </span>&lt;div&gt;&lt;h3&gt;Make your ideas visible.&lt;/h3&gt;&lt;p class="small"&gt;Custom orders for individuals, student groups, associations and businesses.&lt;/p&gt;&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">   </span>&lt;div style="font-size:45px"&gt;👕 ☕ 🧢&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>&lt;div class="notice"&gt;Bulk orders are welcome! Request printing for 10 shirts or more. Final pricing depends on quantity, design and printing method.&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>&lt;form onsubmit="submitPrint(event)"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">   </span>&lt;div class="form-grid"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span>&lt;div class="field"&gt;&lt;label&gt;Full name&lt;/label&gt;&lt;input id="printName" required&gt;&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span>&lt;div class="field"&gt;&lt;label&gt;Phone number&lt;/label&gt;&lt;input id="printPhone" required placeholder="024xxxxxxx"&gt;&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span>&lt;div class="field"&gt;&lt;label&gt;Item&lt;/label&gt;&lt;select id="printItem"&gt;&lt;option&gt;T-shirts&lt;/option&gt;&lt;option&gt;Custom mugs&lt;/option&gt;&lt;option&gt;Caps&lt;/option&gt;&lt;option&gt;Hoodies&lt;/option&gt;&lt;option&gt;Other&lt;/option&gt;&lt;/select&gt;&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span>&lt;div class="field"&gt;&lt;label&gt;Quantity&lt;/label&gt;&lt;input id="printQty" type="number" min="1" value="10" required&gt;&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span>&lt;div class="field"&gt;&lt;label&gt;Printing type&lt;/label&gt;&lt;select id="printType"&gt;&lt;option&gt;Custom design&lt;/option&gt;&lt;option&gt;Logo printing&lt;/option&gt;&lt;option&gt;Text printing&lt;/option&gt;&lt;option&gt;Photo printing&lt;/option&gt;&lt;/select&gt;&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span>&lt;div class="field"&gt;&lt;label&gt;Preferred deadline&lt;/label&gt;&lt;input id="printDate" type="date"&gt;&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span>&lt;div class="field full"&gt;&lt;label&gt;Describe your design and requirements&lt;/label&gt;&lt;textarea id="printDetails" rows="4" required placeholder="Describe colours, sizes, design and delivery location..."&gt;&lt;/textarea&gt;&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">   </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">   </span>&lt;button class="btn blue"&gt;Submit printing request&lt;/button&gt;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>&lt;/form&gt;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>&lt;div id="printMessage"&gt;&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space"> </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space"> </span>&lt;div class="grid"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>&lt;div class="panel"&gt;&lt;div style="font-size:35px"&gt;👕&lt;/div&gt;&lt;h3&gt;T-shirts&lt;/h3&gt;&lt;p class="small"&gt;Personalised shirts, class shirts, club shirts and bulk orders.&lt;/p&gt;&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>&lt;div class="panel"&gt;&lt;div style="font-size:35px"&gt;☕&lt;/div&gt;&lt;h3&gt;Mugs&lt;/h3&gt;&lt;p class="small"&gt;Custom photo mugs, branded mugs and gift mugs.&lt;/p&gt;&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>&lt;div class="panel"&gt;&lt;div style="font-size:35px"&gt;🧢&lt;/div&gt;&lt;h3&gt;Caps&lt;/h3&gt;&lt;p class="small"&gt;Personalised caps and branded merchandise.&lt;/p&gt;&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>&lt;div class="panel"&gt;&lt;div style="font-size:35px"&gt;🎨&lt;/div&gt;&lt;h3&gt;Design services&lt;/h3&gt;&lt;p class="small"&gt;Artwork, logos and other customised designs.&lt;/p&gt;&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space"> </span>&lt;/div&gt;</p>
+<p class="p2">&lt;/section&gt;</p>
+
+<p class="p2">&lt;section id="vendor" class="container hidden"&gt;</p>
+<p class="p2"><span class="Apple-converted-space"> </span>&lt;div class="section-title"&gt;&lt;h2&gt;Become a KampusCart Vendor&lt;/h2&gt;&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space"> </span>&lt;div class="panel"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>&lt;p&gt;Register your business and introduce your products to the UCC community.&lt;/p&gt;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>&lt;form onsubmit="registerVendor(event)"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">   </span>&lt;div class="form-grid"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span>&lt;div class="field"&gt;&lt;label&gt;Business name&lt;/label&gt;&lt;input id="businessName" required&gt;&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span>&lt;div class="field"&gt;&lt;label&gt;Owner's name&lt;/label&gt;&lt;input id="ownerName" required&gt;&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span>&lt;div class="field"&gt;&lt;label&gt;Phone number&lt;/label&gt;&lt;input id="vendorPhone" required&gt;&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span>&lt;div class="field"&gt;&lt;label&gt;Business category&lt;/label&gt;&lt;select id="businessCategory"&gt;&lt;option&gt;Printing&lt;/option&gt;&lt;option&gt;Electronics&lt;/option&gt;&lt;option&gt;Food&lt;/option&gt;&lt;option&gt;Books&lt;/option&gt;&lt;option&gt;Fashion&lt;/option&gt;&lt;option&gt;Accessories&lt;/option&gt;&lt;option&gt;Services&lt;/option&gt;&lt;option&gt;Other&lt;/option&gt;&lt;/select&gt;&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span>&lt;div class="field full"&gt;&lt;label&gt;Business description&lt;/label&gt;&lt;textarea id="businessDescription" required rows="3"&gt;&lt;/textarea&gt;&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">   </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">   </span>&lt;button class="btn blue"&gt;Register business&lt;/button&gt;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>&lt;/form&gt;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>&lt;div id="vendorMessage"&gt;&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space"> </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space"> </span>&lt;div class="panel"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>&lt;h3&gt;Upload a product&lt;/h3&gt;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>&lt;p class="small"&gt;Register a business first. This prototype stores product information in this browser only.&lt;/p&gt;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>&lt;form onsubmit="addProduct(event)"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">   </span>&lt;div class="form-grid"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span>&lt;div class="field"&gt;&lt;label&gt;Product name&lt;/label&gt;&lt;input id="newName" required&gt;&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span>&lt;div class="field"&gt;&lt;label&gt;Price (GH₵)&lt;/label&gt;&lt;input id="newPrice" type="number" min="0.01" step="0.01" required&gt;&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span>&lt;div class="field"&gt;&lt;label&gt;Category&lt;/label&gt;&lt;select id="newCategory"&gt;&lt;option&gt;Printing&lt;/option&gt;&lt;option&gt;Electronics&lt;/option&gt;&lt;option&gt;Food&lt;/option&gt;&lt;option&gt;Books&lt;/option&gt;&lt;option&gt;Fashion&lt;/option&gt;&lt;option&gt;Accessories&lt;/option&gt;&lt;option&gt;Services&lt;/option&gt;&lt;/select&gt;&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span>&lt;div class="field"&gt;&lt;label&gt;Product picture&lt;/label&gt;&lt;input id="newImage" type="file" accept="image/*"&gt;&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span>&lt;div class="field full"&gt;&lt;label&gt;Description&lt;/label&gt;&lt;textarea id="newDescription" rows="3"&gt;&lt;/textarea&gt;&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">   </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">   </span>&lt;button class="btn blue"&gt;Publish product&lt;/button&gt;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>&lt;/form&gt;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>&lt;div id="uploadMessage"&gt;&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space"> </span>&lt;/div&gt;</p>
+<p class="p2">&lt;/section&gt;</p>
+
+<p class="p2">&lt;section id="cart" class="container hidden"&gt;</p>
+<p class="p2"><span class="Apple-converted-space"> </span>&lt;div class="section-title"&gt;&lt;h2&gt;Your shopping cart&lt;/h2&gt;&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space"> </span>&lt;div class="panel"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>&lt;div id="cartItems"&gt;&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>&lt;div class="row" style="margin-top:20px"&gt;&lt;h3&gt;Total: &lt;span id="cartTotal"&gt;GH₵0.00&lt;/span&gt;&lt;/h3&gt;&lt;button class="btn blue" onclick="showPage('checkout')"&gt;Proceed to checkout&lt;/button&gt;&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space"> </span>&lt;/div&gt;</p>
+<p class="p2">&lt;/section&gt;</p>
+
+<p class="p2">&lt;section id="checkout" class="container hidden"&gt;</p>
+<p class="p2"><span class="Apple-converted-space"> </span>&lt;div class="section-title"&gt;&lt;h2&gt;Checkout&lt;/h2&gt;&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space"> </span>&lt;div class="panel"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>&lt;form onsubmit="placeOrder(event)"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">   </span>&lt;div class="form-grid"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span>&lt;div class="field"&gt;&lt;label&gt;Customer name&lt;/label&gt;&lt;input id="customerName" required&gt;&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span>&lt;div class="field"&gt;&lt;label&gt;Phone number&lt;/label&gt;&lt;input id="customerPhone" required&gt;&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span>&lt;div class="field full"&gt;&lt;label&gt;Delivery location / UCC hall&lt;/label&gt;&lt;select id="deliveryLocation"&gt;&lt;option&gt;Casely Hayford Hall&lt;/option&gt;&lt;option&gt;Kwame Nkrumah Hall&lt;/option&gt;&lt;option&gt;Adehye Hall&lt;/option&gt;&lt;option&gt;Oguaa Hall&lt;/option&gt;&lt;option&gt;Atlantic Hall&lt;/option&gt;&lt;option&gt;Superannuation Hall&lt;/option&gt;&lt;option&gt;SRC Hall&lt;/option&gt;&lt;option&gt;Valco Hall&lt;/option&gt;&lt;option&gt;Other UCC location&lt;/option&gt;&lt;/select&gt;&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span>&lt;div class="field full"&gt;&lt;label&gt;Specific delivery address&lt;/label&gt;&lt;textarea id="deliveryAddress" required rows="2"&gt;&lt;/textarea&gt;&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span>&lt;div class="field full"&gt;&lt;label&gt;Payment method&lt;/label&gt;&lt;select id="paymentMethod"&gt;&lt;option&gt;Mobile Money (payment arrangement required)&lt;/option&gt;&lt;option&gt;Cash on Delivery&lt;/option&gt;&lt;/select&gt;&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">   </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">   </span>&lt;div class="notice"&gt;Mobile Money is not processed by this demo. Never share your MoMo PIN or OTP with a vendor or anyone claiming to be KampusCart support.&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">   </span>&lt;button class="btn blue"&gt;Place order&lt;/button&gt;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>&lt;/form&gt;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>&lt;div id="checkoutMessage"&gt;&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space"> </span>&lt;/div&gt;</p>
+<p class="p2">&lt;/section&gt;</p>
+
+<p class="p2">&lt;section id="orders" class="container hidden"&gt;</p>
+<p class="p2"><span class="Apple-converted-space"> </span>&lt;div class="section-title"&gt;&lt;h2&gt;Order management &amp; tracking&lt;/h2&gt;&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space"> </span>&lt;div class="panel"&gt;&lt;div id="ordersList"&gt;No orders yet.&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p2">&lt;/section&gt;</p>
+
+<p class="p2">&lt;section id="account" class="container hidden"&gt;</p>
+<p class="p2"><span class="Apple-converted-space"> </span>&lt;div class="section-title"&gt;&lt;h2&gt;My KampusCart Account&lt;/h2&gt;&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space"> </span>&lt;div class="panel"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>&lt;h3&gt;Create account / Sign in&lt;/h3&gt;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>&lt;p class="small"&gt;This is a local demonstration login, not secure production authentication.&lt;/p&gt;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>&lt;form onsubmit="accountLogin(event)"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">   </span>&lt;div class="field"&gt;&lt;label&gt;Full name&lt;/label&gt;&lt;input id="accountName" required&gt;&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">   </span>&lt;div class="field"&gt;&lt;label&gt;Email address&lt;/label&gt;&lt;input id="accountEmail" type="email" required&gt;&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">   </span>&lt;div class="field"&gt;&lt;label&gt;Password&lt;/label&gt;&lt;input id="accountPassword" type="password" minlength="6" required&gt;&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">   </span>&lt;div class="field"&gt;&lt;label&gt;Account type&lt;/label&gt;&lt;select id="accountType"&gt;&lt;option&gt;Customer&lt;/option&gt;&lt;option&gt;Vendor&lt;/option&gt;&lt;/select&gt;&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">   </span>&lt;button class="btn blue"&gt;Continue&lt;/button&gt;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>&lt;/form&gt;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>&lt;div id="accountMessage"&gt;&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space"> </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space"> </span>&lt;div class="panel"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>&lt;h3&gt;Safety and scam reporting&lt;/h3&gt;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>&lt;p class="small"&gt;Report suspicious sellers, fake products, payment requests or delivery problems.&lt;/p&gt;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>&lt;form onsubmit="reportScam(event)"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">   </span>&lt;div class="field"&gt;&lt;label&gt;Vendor or product involved&lt;/label&gt;&lt;input id="reportSubject" required&gt;&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">   </span>&lt;div class="field"&gt;&lt;label&gt;What happened?&lt;/label&gt;&lt;textarea id="reportDetails" rows="4" required&gt;&lt;/textarea&gt;&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">   </span>&lt;button class="btn blue"&gt;Submit report&lt;/button&gt;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>&lt;/form&gt;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>&lt;div id="reportMessage"&gt;&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space"> </span>&lt;/div&gt;</p>
+<p class="p2">&lt;/section&gt;</p>
+
+<p class="p2">&lt;section id="admin" class="container hidden"&gt;</p>
+<p class="p2"><span class="Apple-converted-space"> </span>&lt;div class="section-title"&gt;&lt;h2&gt;Administration dashboard&lt;/h2&gt;&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space"> </span>&lt;div class="notice"&gt;Production admin access must be controlled by secure backend roles. This demo dashboard is not protected and must not be used for real administration.&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space"> </span>&lt;div class="grid"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>&lt;div class="panel"&gt;&lt;h3&gt;Products&lt;/h3&gt;&lt;h2 id="adminProducts"&gt;0&lt;/h2&gt;&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>&lt;div class="panel"&gt;&lt;h3&gt;Orders&lt;/h3&gt;&lt;h2 id="adminOrders"&gt;0&lt;/h2&gt;&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>&lt;div class="panel"&gt;&lt;h3&gt;Vendors&lt;/h3&gt;&lt;h2 id="adminVendors"&gt;0&lt;/h2&gt;&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>&lt;div class="panel"&gt;&lt;h3&gt;Reports&lt;/h3&gt;&lt;h2 id="adminReports"&gt;0&lt;/h2&gt;&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space"> </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space"> </span>&lt;div class="panel"&gt;&lt;h3&gt;Recent orders&lt;/h3&gt;&lt;div id="adminOrderList"&gt;&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p2">&lt;/section&gt;</p>
+<p class="p2">&lt;/main&gt;</p>
+
+<p class="p2">&lt;footer&gt;</p>
+<p class="p2"><span class="Apple-converted-space"> </span>&lt;div class="inner"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>&lt;div&gt;&lt;div class="logo"&gt;Kampus&lt;span&gt;Cart&lt;/span&gt;&lt;/div&gt;&lt;p&gt;Your campus. Your marketplace. Your convenience.&lt;br&gt;Connecting buyers and businesses in the University of Cape Coast community.&lt;/p&gt;&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>&lt;div&gt;&lt;h3&gt;Explore&lt;/h3&gt;&lt;p&gt;Marketplace&lt;br&gt;Custom Printing&lt;br&gt;Become a Vendor&lt;br&gt;Order Tracking&lt;/p&gt;&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>&lt;div&gt;&lt;h3&gt;Support&lt;/h3&gt;&lt;p&gt;Safety Centre&lt;br&gt;Report a Scam&lt;br&gt;Customer Support&lt;br&gt;Terms and Conditions&lt;/p&gt;&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space"> </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space"> </span>&lt;p style="text-align:center;margin-top:25px"&gt;© 2026 KampusCart. All rights reserved.&lt;/p&gt;</p>
+<p class="p2">&lt;/footer&gt;</p>
+
+<p class="p2">&lt;script&gt;</p>
+<p class="p2">const KEY='kampuscart_data_v1';</p>
+<p class="p2">let state;</p>
+<p class="p2">try{</p>
+<p class="p2"><span class="Apple-converted-space"> </span>state=JSON.parse(localStorage.getItem(KEY))||{};</p>
+<p class="p2">}catch(e){state={};}</p>
+<p class="p2">state.products=state.products||[];</p>
+<p class="p2">state.vendors=state.vendors||[];</p>
+<p class="p2">state.orders=state.orders||[];</p>
+<p class="p2">state.reports=state.reports||[];</p>
+<p class="p2">state.printRequests=state.printRequests||[];</p>
+<p class="p2">state.cart=state.cart||[];</p>
+<p class="p2">let activeCategory='All';</p>
+<p class="p2">let currentUser=null;</p>
+
+<p class="p2">const starter=[</p>
+<p class="p2"><span class="Apple-converted-space"> </span>{id:1,name:'Custom Printed T-Shirt',price:85,category:'Printing',description:'Custom design shirts for students and groups.',image:'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=600'},</p>
+<p class="p2"><span class="Apple-converted-space"> </span>{id:2,name:'Personalised Mug',price:55,category:'Printing',description:'Personalised photo and logo mugs.',image:'https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=600'},</p>
+<p class="p2"><span class="Apple-converted-space"> </span>{id:3,name:'Wireless Earbuds',price:120,category:'Electronics',description:'Wireless audio accessories.',image:'https://images.unsplash.com/photo-1606220945770-b5b6c2c55bf1?w=600'},</p>
+<p class="p2"><span class="Apple-converted-space"> </span>{id:4,name:'Student Notebook',price:30,category:'Books',description:'Notebook for lectures and everyday notes.',image:'https://images.unsplash.com/photo-1531346878377-a5be20888e57?w=600'},</p>
+<p class="p2"><span class="Apple-converted-space"> </span>{id:5,name:'Campus Burger',price:45,category:'Food',description:'Freshly prepared campus meal.',image:'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600'},</p>
+<p class="p2"><span class="Apple-converted-space"> </span>{id:6,name:'Classic Baseball Cap',price:50,category:'Fashion',description:'Stylish everyday cap.',image:'https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=600'},</p>
+<p class="p2"><span class="Apple-converted-space"> </span>{id:7,name:'Smartphone',price:1800,category:'Electronics',description:'Smartphone listing. Confirm condition with seller.',image:'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=600'},</p>
+<p class="p2"><span class="Apple-converted-space"> </span>{id:8,name:'Phone Charger',price:65,category:'Accessories',description:'Charging accessory.',image:'https://images.unsplash.com/photo-1583863788434-e58a36330cf0?w=600'}</p>
+<p class="p2">];</p>
+<p class="p2">function save(){localStorage.setItem(KEY,JSON.stringify(state));}</p>
+<p class="p2">function allProducts(){return [...starter,...state.products];}</p>
+<p class="p2">function money(n){return 'GH₵'+Number(n).toFixed(2)}</p>
+<p class="p2">function showPage(page){</p>
+<p class="p2"><span class="Apple-converted-space"> </span>document.querySelectorAll('main section').forEach(s=&gt;s.classList.add('hidden'));</p>
+<p class="p2"><span class="Apple-converted-space"> </span>const el=document.getElementById(page);</p>
+<p class="p2"><span class="Apple-converted-space"> </span>if(el)el.classList.remove('hidden');</p>
+<p class="p2"><span class="Apple-converted-space"> </span>if(page==='market')renderProducts();</p>
+<p class="p2"><span class="Apple-converted-space"> </span>if(page==='cart')renderCart();</p>
+<p class="p2"><span class="Apple-converted-space"> </span>if(page==='orders')renderOrders();</p>
+<p class="p2"><span class="Apple-converted-space"> </span>if(page==='admin')renderAdmin();</p>
+<p class="p2"><span class="Apple-converted-space"> </span>window.scrollTo({top:0,behavior:'smooth'});</p>
+<p class="p2">}</p>
+<p class="p2">function productCard(p){</p>
+<p class="p2"><span class="Apple-converted-space"> </span>return `&lt;article class="product"&gt;</p>
+<p class="p2"><span class="Apple-converted-space"> </span>&lt;img src="${escapeHTML(p.image||'https://placehold.co/500x350?text=KampusCart')}" alt="${escapeHTML(p.name)}" onerror="this.src='https://placehold.co/500x350?text=KampusCart'"&gt;</p>
+<p class="p2"><span class="Apple-converted-space"> </span>&lt;div class="product-info"&gt;&lt;span class="tag"&gt;${escapeHTML(p.category)}&lt;/span&gt;</p>
+<p class="p2"><span class="Apple-converted-space"> </span>&lt;h3&gt;${escapeHTML(p.name)}&lt;/h3&gt;&lt;p class="small"&gt;${escapeHTML(p.description||'Available on KampusCart')}&lt;/p&gt;</p>
+<p class="p2"><span class="Apple-converted-space"> </span>&lt;p class="price"&gt;${money(p.price)}&lt;/p&gt;</p>
+<p class="p2"><span class="Apple-converted-space"> </span>&lt;button class="btn blue" onclick="addToCart(${Number(p.id)})"&gt;Add to cart&lt;/button&gt;&lt;/div&gt;&lt;/article&gt;`;</p>
+<p class="p2">}</p>
+<p class="p2">function escapeHTML(v){</p>
+<p class="p2"><span class="Apple-converted-space"> </span>return String(v??'').replace(/[&amp;&lt;&gt;"']/g,c=&gt;({'&amp;':'&amp;amp;','&lt;':'&amp;lt;','&gt;':'&amp;gt;','"':'&amp;quot;',"'":'&amp;#39;'}[c]));</p>
+<p class="p2">}</p>
+<p class="p2">function renderProducts(){</p>
+<p class="p2"><span class="Apple-converted-space"> </span>const q=(document.getElementById('search')?.value||'').toLowerCase();</p>
+<p class="p2"><span class="Apple-converted-space"> </span>const items=allProducts().filter(p=&gt;(activeCategory==='All'||p.category===activeCategory)&amp;&amp;(`${p.name} ${p.description} ${p.category}`).toLowerCase().includes(q));</p>
+<p class="p2"><span class="Apple-converted-space"> </span>document.getElementById('products').innerHTML=items.length?items.map(productCard).join(''):'&lt;div class="panel"&gt;No matching products found.&lt;/div&gt;';</p>
+<p class="p2">}</p>
+<p class="p2">function filterCategory(c){activeCategory=c;renderProducts();showPage('market');}</p>
+<p class="p2">function renderHome(){document.getElementById('homeProducts').innerHTML=allProducts().slice(0,4).map(productCard).join('');}</p>
+<p class="p2">function updateCartCount(){document.getElementById('cartCount').textContent=state.cart.reduce((a,b)=&gt;a+b.qty,0);}</p>
+<p class="p2">function addToCart(id){</p>
+<p class="p2"><span class="Apple-converted-space"> </span>let p=allProducts().find(x=&gt;x.id===id);</p>
+<p class="p2"><span class="Apple-converted-space"> </span>if(!p)return;</p>
+<p class="p2"><span class="Apple-converted-space"> </span>let existing=state.cart.find(x=&gt;x.id===id);</p>
+<p class="p2"><span class="Apple-converted-space"> </span>if(existing)existing.qty++;else state.cart.push({id:p.id,qty:1});</p>
+<p class="p2"><span class="Apple-converted-space"> </span>save();updateCartCount();alert('Added to your cart!');</p>
+<p class="p2">}</p>
+<p class="p2">function renderCart(){</p>
+<p class="p2"><span class="Apple-converted-space"> </span>const box=document.getElementById('cartItems');</p>
+<p class="p2"><span class="Apple-converted-space"> </span>if(!state.cart.length){box.innerHTML='Your cart is empty.';document.getElementById('cartTotal').textContent=money(0);return;}</p>
+<p class="p2"><span class="Apple-converted-space"> </span>let total=0;</p>
+<p class="p2"><span class="Apple-converted-space"> </span>box.innerHTML=state.cart.map(item=&gt;{</p>
+<p class="p2"><span class="Apple-converted-space"> </span>let p=allProducts().find(x=&gt;x.id===item.id);if(!p)return '';</p>
+<p class="p2"><span class="Apple-converted-space"> </span>total+=p.price*item.qty;</p>
+<p class="p2"><span class="Apple-converted-space"> </span>return `&lt;div class="cart-item"&gt;&lt;div&gt;&lt;b&gt;${escapeHTML(p.name)}&lt;/b&gt;&lt;p class="small"&gt;${money(p.price)} × ${item.qty}&lt;/p&gt;&lt;/div&gt;&lt;button onclick="removeCart(${item.id})"&gt;Remove&lt;/button&gt;&lt;/div&gt;`;</p>
+<p class="p2"><span class="Apple-converted-space"> </span>}).join('');</p>
+<p class="p2"><span class="Apple-converted-space"> </span>document.getElementById('cartTotal').textContent=money(total);</p>
+<p class="p2">}</p>
+<p class="p2">function removeCart(id){state.cart=state.cart.filter(x=&gt;x.id!==id);save();updateCartCount();renderCart();}</p>
+<p class="p2">function placeOrder(e){</p>
+<p class="p2"><span class="Apple-converted-space"> </span>e.preventDefault();if(!state.cart.length){alert('Your cart is empty.');return;}</p>
+<p class="p2"><span class="Apple-converted-space"> </span>let total=0;</p>
+<p class="p2"><span class="Apple-converted-space"> </span>state.cart.forEach(i=&gt;{let p=allProducts().find(x=&gt;x.id===i.id);if(p)total+=p.price*i.qty;});</p>
+<p class="p2"><span class="Apple-converted-space"> </span>const order={id:'KC'+Date.now(),name:document.getElementById('customerName').value,phone:document.getElementById('customerPhone').value,location:document.getElementById('deliveryLocation').value,address:document.getElementById('deliveryAddress').value,payment:document.getElementById('paymentMethod').value,total,status:'Order received',items:state.cart.map(i=&gt;({...i})),date:new Date().toLocaleString()};</p>
+<p class="p2"><span class="Apple-converted-space"> </span>state.orders.unshift(order);state.cart=[];save();updateCartCount();</p>
+<p class="p2"><span class="Apple-converted-space"> </span>document.getElementById('checkoutMessage').innerHTML='&lt;div class="success"&gt;Your order has been recorded in this browser. Order number: '+escapeHTML(order.id)+'&lt;/div&gt;';</p>
+<p class="p2"><span class="Apple-converted-space"> </span>e.target.reset();</p>
+<p class="p2">}</p>
+<p class="p2">function renderOrders(){</p>
+<p class="p2"><span class="Apple-converted-space"> </span>const box=document.getElementById('ordersList');</p>
+<p class="p2"><span class="Apple-converted-space"> </span>box.innerHTML=state.orders.length?state.orders.map(o=&gt;`&lt;div class="panel"&gt;&lt;div class="row"&gt;&lt;b&gt;${escapeHTML(o.id)}&lt;/b&gt;&lt;span class="badge"&gt;${escapeHTML(o.status)}&lt;/span&gt;&lt;/div&gt;&lt;p class="small"&gt;${escapeHTML(o.date)} · ${escapeHTML(o.location)}&lt;/p&gt;&lt;p&gt;&lt;b&gt;${money(o.total)}&lt;/b&gt;&lt;/p&gt;&lt;p class="small"&gt;Payment: ${escapeHTML(o.payment)}&lt;/p&gt;&lt;/div&gt;`).join(''):'No orders yet.';</p>
+<p class="p2">}</p>
+<p class="p2">function registerVendor(e){</p>
+<p class="p2"><span class="Apple-converted-space"> </span>e.preventDefault();</p>
+<p class="p2"><span class="Apple-converted-space"> </span>state.vendors.push({business:businessName.value,owner:ownerName.value,phone:vendorPhone.value,category:businessCategory.value,description:businessDescription.value});</p>
+<p class="p2"><span class="Apple-converted-space"> </span>save();document.getElementById('vendorMessage').innerHTML='&lt;div class="success"&gt;Business profile saved in this browser.&lt;/div&gt;';e.target.reset();</p>
+<p class="p2">}</p>
+<p class="p2">function addProduct(e){</p>
+<p class="p2"><span class="Apple-converted-space"> </span>e.preventDefault();</p>
+<p class="p2"><span class="Apple-converted-space"> </span>const file=document.getElementById('newImage').files[0];</p>
+<p class="p2"><span class="Apple-converted-space"> </span>const makeProduct=(image)=&gt;{</p>
+<p class="p2"><span class="Apple-converted-space"> </span>state.products.unshift({id:Date.now(),name:newName.value,price:Number(newPrice.value),category:newCategory.value,description:newDescription.value,image,vendor:currentUser?.name||'Local vendor'});</p>
+<p class="p2"><span class="Apple-converted-space"> </span>save();renderProducts();renderHome();document.getElementById('uploadMessage').innerHTML='&lt;div class="success"&gt;Product published on this browser.&lt;/div&gt;';e.target.reset();</p>
+<p class="p2"><span class="Apple-converted-space"> </span>};</p>
+<p class="p2"><span class="Apple-converted-space"> </span>if(file){const reader=new FileReader();reader.onload=()=&gt;makeProduct(reader.result);reader.readAsDataURL(file);}</p>
+<p class="p2"><span class="Apple-converted-space"> </span>else makeProduct('https://placehold.co/500x350?text=KampusCart');</p>
+<p class="p2">}</p>
+<p class="p2">function submitPrint(e){</p>
+<p class="p2"><span class="Apple-converted-space"> </span>e.preventDefault();</p>
+<p class="p2"><span class="Apple-converted-space"> </span>state.printRequests.push({name:printName.value,phone:printPhone.value,item:printItem.value,quantity:printQty.value,type:printType.value,date:printDate.value,details:printDetails.value});</p>
+<p class="p2"><span class="Apple-converted-space"> </span>save();document.getElementById('printMessage').innerHTML='&lt;div class="success"&gt;Your printing request has been saved in this browser. A real service needs a connected vendor and backend to receive it.&lt;/div&gt;';e.target.reset();</p>
+<p class="p2">}</p>
+<p class="p2">function accountLogin(e){</p>
+<p class="p2"><span class="Apple-converted-space"> </span>e.preventDefault();</p>
+<p class="p2"><span class="Apple-converted-space"> </span>currentUser={name:accountName.value,email:accountEmail.value,type:accountType.value};</p>
+<p class="p2"><span class="Apple-converted-space"> </span>document.getElementById('accountMessage').innerHTML='&lt;div class="success"&gt;Welcome, '+escapeHTML(currentUser.name)+'. This is a local demo session only.&lt;/div&gt;';</p>
+<p class="p2">}</p>
+<p class="p2">function reportScam(e){</p>
+<p class="p2"><span class="Apple-converted-space"> </span>e.preventDefault();state.reports.unshift({subject:reportSubject.value,details:reportDetails.value,date:new Date().toLocaleString()});save();</p>
+<p class="p2"><span class="Apple-converted-space"> </span>document.getElementById('reportMessage').innerHTML='&lt;div class="success"&gt;Report saved locally. In a live service it must be sent to the moderation team.&lt;/div&gt;';e.target.reset();</p>
+<p class="p2">}</p>
+<p class="p2">function renderAdmin(){</p>
+<p class="p2"><span class="Apple-converted-space"> </span>document.getElementById('adminProducts').textContent=allProducts().length;</p>
+<p class="p2"><span class="Apple-converted-space"> </span>document.getElementById('adminOrders').textContent=state.orders.length;</p>
+<p class="p2"><span class="Apple-converted-space"> </span>document.getElementById('adminVendors').textContent=state.vendors.length;</p>
+<p class="p2"><span class="Apple-converted-space"> </span>document.getElementById('adminReports').textContent=state.reports.length;</p>
+<p class="p2"><span class="Apple-converted-space"> </span>document.getElementById('adminOrderList').innerHTML=state.orders.map(o=&gt;`&lt;div class="cart-item"&gt;&lt;span&gt;${escapeHTML(o.id)} — ${escapeHTML(o.name)} — ${money(o.total)}&lt;/span&gt;&lt;select onchange="changeStatus('${o.id}',this.value)"&gt;&lt;option&gt;${escapeHTML(o.status)}&lt;/option&gt;&lt;option&gt;Processing&lt;/option&gt;&lt;option&gt;Ready for dispatch&lt;/option&gt;&lt;option&gt;Out for delivery&lt;/option&gt;&lt;option&gt;Delivered&lt;/option&gt;&lt;option&gt;Cancelled&lt;/option&gt;&lt;/select&gt;&lt;/div&gt;`).join('')||'No orders recorded.';</p>
+<p class="p2">}</p>
+<p class="p2">function changeStatus(id,status){let o=state.orders.find(x=&gt;x.id===id);if(o){o.status=status;save();renderAdmin();}}</p>
+<p class="p2">renderHome();renderProducts();updateCartCount();</p>
+<p class="p2">&lt;/script&gt;</p>
+<p class="p2">&lt;/body&gt;</p>
+<p class="p2">&lt;/html</p>
+
+</body>
+</html>
